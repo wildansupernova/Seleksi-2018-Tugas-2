@@ -15,7 +15,7 @@
 
 ### Specifications
 
-1. Tugas dikerjakan secara berkelompok dengan pembagian anggota yang dapat diakses pada link berikut: [Pembagian Kelompok Tugas 2] (https://docs.google.com/spreadsheets/d/1rmLotmW_yk60mK78awBMLF9fTukAXSWLmQl1fVkHYn8/edit?usp=sharing).
+1. Tugas dikerjakan secara berkelompok dengan pembagian anggota yang dapat diakses pada link berikut: [Pembagian Kelompok Tugas 2](https://docs.google.com/spreadsheets/d/1rmLotmW_yk60mK78awBMLF9fTukAXSWLmQl1fVkHYn8/edit?usp=sharing).
 
 2. Setiap kelompok diminta untuk membuat sebuah dashboard interaktif yang memvisualisasikan data hasil scraping pada tugas 1. Data atau topik yang digunakan boleh memilih salah satu dari topik-topik anggota kelompok __ATAU__ mengkombinasikannya.
 
