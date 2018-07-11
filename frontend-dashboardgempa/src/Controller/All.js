@@ -15,6 +15,7 @@ export class All extends React.Component{
             delayAnimate: "1",
             epicentrums: mockData,
             isStartAnimate: false,
+            minimumMagnitude: 0,
             animation: {
                 totalPage: 5,
                 pageNow: 1,
@@ -32,13 +33,15 @@ export class All extends React.Component{
         this.handleStartAnimate = this.handleStartAnimate.bind(this);
         this.handleStopAnimate = this.handleStopAnimate.bind(this);
         this.handleOnGoingAnimate = this.handleOnGoingAnimate.bind(this);
+        this.handleChangeMinimumMagnitude = this.handleChangeMinimumMagnitude.bind(this);
         this.timeIntervalFunction = null;
     }
 
+
     handleOnGoingAnimate(){
         let page = this.state.animation.pageNow + 1;
-        const { fromDate, toDate, interval, intervalType } = this.state;
-        APIRequest.getDataEpicentrum(fromDate, toDate, interval, intervalType, page)
+        const { fromDate, toDate, interval, intervalType, minimumMagnitude } = this.state;
+        APIRequest.getDataEpicentrum(fromDate, toDate, interval, intervalType, page, minimumMagnitude)
         .then((response) => {
             const { 
                 totalPage,
@@ -64,8 +67,8 @@ export class All extends React.Component{
             ...this.state,
             isStartAnimate: true
         });
-        const { fromDate, toDate, interval, intervalType, delayAnimate } = this.state;
-        APIRequest.getDataEpicentrum(fromDate, toDate, interval, intervalType)
+        const { fromDate, toDate, interval, intervalType, delayAnimate, minimumMagnitude  } = this.state;
+        APIRequest.getDataEpicentrum(fromDate, toDate, interval, intervalType, 1, minimumMagnitude)
         .then((response) => {
             const { 
                 totalPage,
@@ -108,7 +111,11 @@ export class All extends React.Component{
         let change = Object.assign({},this.state);
         change.interval = event.target.value;
         this.setState(change);
-        console.log(event.target.value);
+    }
+    handleChangeMinimumMagnitude(event) {
+        let change = Object.assign({},this.state);
+        change.minimumMagnitude = event.target.value;
+        this.setState(change);
     }
     handleChangeIntervalType(event){
         let change = Object.assign({},this.state);
@@ -125,9 +132,9 @@ export class All extends React.Component{
         return  (
         <IndonesiaMap 
             {...wil}
+            {...this.state.animation}
             {...this.props} 
             {...this.state}
-            {...this.state.animation}
             epicentrums={this.state.epicentrums} 
             handleChangeFromDate={this.handleChangeFromDate}
             handleChangeToDate={this.handleChangeToDate}
@@ -137,7 +144,9 @@ export class All extends React.Component{
             handleStartAnimate={this.handleStartAnimate}
             handleStopAnimate={this.handleStopAnimate}
             handleSliderOnChange={this.handleSliderOnChange}
+            handleChangeMinimumMagnitude={this.handleChangeMinimumMagnitude}
             isStartAnimate={this.state.isStartAnimate}
+
         />);
     }
 

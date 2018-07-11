@@ -20,7 +20,7 @@ class CreateEpicentrumsTable extends Migration
             $table->string('Latitude',255);
             $table->string('Longitude',255);
             $table->string('Depth',255);
-            $table->string('Mag',255);
+            $table->double('Mag');
             $table->string('TypeMag',255);
             $table->string('smaj',255);
             $table->string('smin',255);

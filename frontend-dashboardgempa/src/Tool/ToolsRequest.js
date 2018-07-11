@@ -8,14 +8,15 @@ export class APIRequest extends React.Component {
         this.getDataEpicentrum = this.getDataEpicentrum.bind(this);
     }
 
-    static getDataEpicentrum(fromDate, toDate, interval, intervalType, page = 1){
+    static getDataEpicentrum(fromDate, toDate, interval, intervalType, page = 1, minMagnitude = 0){
         let hasil = {};
         return axios.post('http://127.0.0.1:8000/api/data', {
             fromDate,
             toDate,
             interval,
             intervalType,
-            page
+            page,
+            minMagnitude
           })
     }
 }

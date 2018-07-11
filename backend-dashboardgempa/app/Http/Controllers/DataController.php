@@ -30,8 +30,13 @@ class DataController extends Controller
         $fromDateQuery = $fromDate->copy()->addDays($days*($page-1));
         $toDateQuery = $page == $totalPage ? $toDate : $fromDateQuery->copy()->addDays($days-1);
 
+        
         $query = 'SELECT * FROM epicentrums WHERE Date BETWEEN ';
         $query = $query."'".$fromDateQuery->toDateString()."'".' AND '."'".$toDateQuery->toDateString()."'";
+
+        if ($request->has('minMagnitude')) {
+            $query = $query." AND Mag>=".$request->minMagnitude;
+        } 
 
         return [
             "data" => DB::select($query),
@@ -46,8 +51,6 @@ class DataController extends Controller
     }
 
     public function generateDataFromDateQuery(Request $request) {
-
-
         $hasilBalikan = [];
 
         switch ($request->intervalType) {

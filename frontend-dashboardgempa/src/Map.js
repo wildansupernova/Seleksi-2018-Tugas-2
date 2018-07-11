@@ -41,11 +41,13 @@ export const IndonesiaMap = compose(
       handleChangeInterval: props.handleChangeInterval,
       handleChangeIntervalType: props.handleChangeIntervalType,
       handleChangeDelay: props.handleChangeDelay,
+      handleChangeMinimumMagnitude: props.handleChangeMinimumMagnitude,
       fromDate: props.fromDate,
       toDate: props.toDate,
       interval: props.interval,
       intervalType: props.intervalType,
-      delayAnimate: props.delayAnimate
+      delayAnimate: props.delayAnimate,
+      minimumMagnitude: props.minimumMagnitude
     };
 
     return (
@@ -66,7 +68,8 @@ export const IndonesiaMap = compose(
             onChange={props.handleSliderOnChange}
           /> */}
           
-          <input type="text" defaultValue={props.pageNow + " from " + props.totalPage} value={props.pageNow + " from " + props.totalPage}/>          
+          <input type="text" defaultValue={props.pageNow + " from " + props.totalPage} value={props.pageNow + " from " + props.totalPage}/>  
+          <input type="text" defaultValue={props.fromDateNow + " to " + props.toDateNow} value={props.fromDateNow + " to " + props.toDateNow}/>        
           <ActButton 
             handleStartAnimate={props.handleStartAnimate}
             handleStopAnimate={props.handleStopAnimate}

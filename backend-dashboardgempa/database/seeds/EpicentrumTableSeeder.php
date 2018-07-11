@@ -27,7 +27,7 @@ class EpicentrumTableSeeder extends Seeder
                 'Latitude' => $obj->Latitude,
                 'Longitude' => $obj->Longitude,
                 'Depth' => $obj->Depth,
-                'Mag' => $obj->Mag,
+                'Mag' => doubleval($obj->Mag),
                 'TypeMag' => $obj->TypeMag,
                 'smaj' => $obj->smaj,
                 'smin' => $obj->smin,

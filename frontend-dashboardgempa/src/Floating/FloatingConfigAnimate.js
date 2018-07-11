@@ -27,6 +27,10 @@ export class FloatingConfigAnimate extends React.Component{
                     <Label for="delayAnimate">Delay (seconds)</Label>
                     <Input onChange={this.props.handleChangeDelay} defaultValue={this.props.delayAnimate} type="number" name="delayAnimate" id="delayAnimate" placeholder="enter delay" />             
                 </FormGroup>
+                <FormGroup>
+                    <Label for="minimumMagnitude">Minimum magnitude</Label>
+                    <Input onChange={this.props.handleChangeMinimumMagnitude} defaultValue={this.props.minimumMagnitude} type="number" name="minimumMagnitude" id="minimumMagnitude" placeholder="enter minimum magnitude" />             
+                </FormGroup>
             </Form>
 
         );
