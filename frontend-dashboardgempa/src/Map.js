@@ -27,13 +27,15 @@ export const IndonesiaMap = compose(
   withGoogleMap
 )((props) => {
     let arrayOfMarkerWithCircle = [];
-    
-    props.epicentrums.forEach(element => {
+    arrayOfMarkerWithCircle = props.epicentrums.map( (element,index) => {
+      let keynya = element.id;
+      console.log(keynya);
       let temp = (
-        <MarkerWithCircle earthquakeData={element}/>
+        <MarkerWithCircle earthquakeData={element} key={keynya}/>
       );
-      arrayOfMarkerWithCircle.push(temp);
+      return temp;
     });
+
     
     let configAnimate = {
       handleChangeFromDate: props.handleChangeFromDate,
@@ -68,8 +70,8 @@ export const IndonesiaMap = compose(
             onChange={props.handleSliderOnChange}
           /> */}
           
-          <input type="text" defaultValue={props.pageNow + " from " + props.totalPage} value={props.pageNow + " from " + props.totalPage}/>  
-          <input type="text" defaultValue={props.fromDateNow + " to " + props.toDateNow} value={props.fromDateNow + " to " + props.toDateNow}/>        
+          <input type="text"  value={props.pageNow + " from " + props.totalPage}/>  
+          <input type="text"  value={props.fromDateNow + " to " + props.toDateNow}/>        
           <ActButton 
             handleStartAnimate={props.handleStartAnimate}
             handleStopAnimate={props.handleStopAnimate}

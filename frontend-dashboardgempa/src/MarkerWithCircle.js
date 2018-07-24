@@ -8,18 +8,58 @@ export class MarkerWithCircle extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
-          isModalOpen: false
+          isModalOpen: false,
+          opacityAnimation: 100,
+          opacityDirection: 'up',
         };
-    
+        // this.transitionOpacity = this.transitionOpacity.bind(this);
+        // this.functionTransition = setInterval(this.transitionOpacity, 10);
         this.toggleModal = this.toggleModal.bind(this);
     }    
     
+    componentWillUnmount() {
+        clearInterval(this.functionTransition);
+    }
     toggleModal(){
         this.setState({
             isModalOpen : !this.state.isModalOpen
         });
     }
     
+    transitionOpacity() {
+        const decInc = 5;
+        switch (this.state.opacityAnimation) {
+            case 100:
+                this.setState({
+                    ...this.state,
+                    opacityAnimation: this.state.opacityAnimation-decInc,
+                    opacityDirection: 'down',
+                });
+                break;
+            case 0:
+                this.setState({
+                    ...this.state,
+                    opacityAnimation: this.state.opacityAnimation+decInc,
+                    opacityDirection: 'up',
+                });
+                break;
+            default:
+                let tambah = 0;
+                switch (this.state.opacityDirection) {
+                    case 'down':
+                        tambah = -decInc;
+                        break;
+                    case 'up':
+                        tambah = decInc;
+                        break;
+                }
+                this.setState({
+                    ...this.state,
+                    opacityAnimation: this.state.opacityAnimation+tambah,                    
+                });
+                break;
+        }
+    }
     
     render(){
         const pos = {
@@ -28,23 +68,30 @@ export class MarkerWithCircle extends React.Component{
         };
         const magnitude = Number.parseFloat(this.props.earthquakeData.Mag);
         const color = ToolsCalc.getColor(magnitude);
-        // const radius = ToolsCalc.getRadius(magnitude);
         const circle = {
             path: google.maps.SymbolPath.CIRCLE,
             fillColor: color,
-            fillOpacity: 0.4,
-            scale: 20,
+            fillOpacity: 0,
+            scale:  15,
             strokeColor: color,
-            strokeWeight: 1
+            strokeWeight: 4,
+            strokeOpacity: this.state.opacityAnimation/100,
           };
-  
+        const circleDot = {
+            path: google.maps.SymbolPath.CIRCLE,
+            fillColor: 'FFFFFFFF',
+            fillOpacity: this.state.opacityAnimation/100,
+            scale: 5,
+            strokeColor: 'FFFFFFFF',
+            strokeWeight: 5,
+            strokeOpacity: this.state.opacityAnimation/100,
+        };  
         return (
-            <div>
+            <div key={this.props.keynya}>
                 {
                     this.state.isModalOpen &&
                     <FloatingDetails earthquakeData={this.props.earthquakeData} isModalOpen={this.state.isModalOpen} toggle={this.toggleModal} />
                 }
-                
                 <Marker 
                     position={pos}
                     
@@ -57,15 +104,18 @@ export class MarkerWithCircle extends React.Component{
                     //     zIndex: 1,
                     // }}
                     // radius={radius}
-                    defaultIcon={circle}
+                    icon={circle}
                     zIndex={5}
-                    
+                    onClick={this.toggleModal}                    
                 />
-                <Marker
+
+                <Marker 
                     position={pos}
-                    onClick={this.toggleModal}
-                    zIndex={6}
-                />                
+                    op
+                    icon={circleDot}
+                    zIndex={5}
+                    onClick={this.toggleModal}                    
+                />
             </div>
 
         );

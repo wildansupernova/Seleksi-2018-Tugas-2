@@ -28,7 +28,7 @@ export class FloatingDetails extends React.Component{
             value = this.props.earthquakeData[element];
         }
         let jsxTr = (
-            <tr>
+            <tr key={element}>
                 <td>{element}</td>
                 <td>{value}</td>
             </tr>

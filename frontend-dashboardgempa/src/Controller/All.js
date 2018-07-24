@@ -51,9 +51,10 @@ export class All extends React.Component{
                 toDateNow,
                 toDate 
             } = response.data;
+            let hasilEpicentrums = response.data.data;
             this.setState({
                 ...this.state,
-                epicentrums: response.data.data,
+                epicentrums: hasilEpicentrums,
                 animation: {totalPage, pageNow, fromDateNow, fromDate, toDateNow, toDate}
             });
         })
@@ -128,10 +129,8 @@ export class All extends React.Component{
         this.setState(change);
     }    
     render(){
-        const wil = "str";
         return  (
         <IndonesiaMap 
-            {...wil}
             {...this.state.animation}
             {...this.props} 
             {...this.state}
@@ -148,13 +147,5 @@ export class All extends React.Component{
             isStartAnimate={this.state.isStartAnimate}
 
         />);
-    }
-
-
-    componentDidMount(){
-        
-    }
-    componentDidUpdate(){
-
     }
 }
