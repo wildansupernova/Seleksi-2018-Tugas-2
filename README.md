@@ -17,7 +17,7 @@ This repository showing visualization about earthquake in animation
 
 # Install BackEnd
 1. Install php and mysql and composer
-2. in backend-dashboardgempa type and enter ``` composer install ``` and then ``` composer update ```
+2. in backend-dashboardgempa folder type and enter ``` composer install ``` and then ``` composer update ```
 3. In backend-dashboardgempa folder, copy or just rename .env.example file as .env.
 4. In .env file set the config so it fit with you environtment especially this config
 ```
@@ -32,8 +32,8 @@ change `DB_DATABASE=homestead` to 'DB_DATABASE=homestead' (don't forget to creat
 
 
 5. make database  named ```earthquake``` in mysql
-6. in backend-dashboardgempa type and enter ``` php artisan migrate ```. It will create epicentrums table in "earthquake" database
-7. in backend-dashboardgempa give command ``` php artisan db:seed ```. If anything error or computer deadlock happen
+6. in backend-dashboardgempa folder type and enter ``` php artisan migrate ```. It will create epicentrums table in "earthquake" database
+7. in backend-dashboardgempa folder give command ``` php artisan db:seed ```. If anything error or computer deadlock happen
 you can manually add data with epicentrums.sql to import to sql manually to table epicentrums.
 8. To run backend just type and enter ``` php artisan serve ```
 
