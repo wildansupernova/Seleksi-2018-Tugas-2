@@ -1,0 +1,62 @@
+[
+    {
+        "Date": "2008-10-10",
+        "Time": "04:11:40",
+        "Latitude": "-9.14",
+        "Longitude": "117.29",
+        "Depth": "101",
+        "Mag": "3.8",
+        "TypeMag": "MLv",
+        "smaj": "3.9",
+        "smin": "1.22",
+        "az": "215",
+        "rms": "0.421",
+        "cPhase": "8",
+        "Region": "Sumbawa Region, Indonesia   "
+    },
+    {
+        "Date": "2008-10-10",
+        "Time": "04:27:33",
+        "Latitude": "-6.03",
+        "Longitude": "128.75",
+        "Depth": "302",
+        "Mag": "4.2",
+        "TypeMag": "MLv",
+        "smaj": "12.38",
+        "smin": "1.88",
+        "az": "95",
+        "rms": "0.572",
+        "cPhase": "11",
+        "Region": "Banda Sea    "
+    },
+    {
+        "Date": "2008-10-10",
+        "Time": "06:10:37",
+        "Latitude": "-3.6",
+        "Longitude": "128.8",
+        "Depth": "96",
+        "Mag": "4.9",
+        "TypeMag": "MLv",
+        "smaj": "8.82",
+        "smin": "0.28",
+        "az": "128",
+        "rms": "0.536",
+        "cPhase": "13",
+        "Region": "Seram, Indonesia    "
+    },
+    {
+        "Date": "2008-10-10",
+        "Time": "08:05:50",
+        "Latitude": "-3.35",
+        "Longitude": "121.14",
+        "Depth": "249",
+        "Mag": "3.2",
+        "TypeMag": "MLv",
+        "smaj": "2.2",
+        "smin": "1.14",
+        "az": "253",
+        "rms": "0",
+        "cPhase": "4",
+        "Region": "Sulawesi, Indonesia    "
+    }
+]
