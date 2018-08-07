@@ -8,7 +8,7 @@ This repository showing visualization about earthquake in animation
 - npm (latest)
 - composer (latest)
 
-#Technology
+# Technology
 - Using React
 - Using Laravel
 - Using MySQL
