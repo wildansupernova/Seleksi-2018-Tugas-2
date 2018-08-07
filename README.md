@@ -41,7 +41,9 @@ change `DB_DATABASE=homestead` to 'DB_DATABASE=homestead' (don't forget to creat
 you can manually add data with epicentrums.sql to import to sql manually to table epicentrums.
 8. To run backend just type and enter ``` php artisan serve ```
 
-# Default Endpoint
+# Default Endpoint and View
+
+*Don't Forget to enable your internet, cause this dashboard use google maps*
 
 - FrontEnd (Default Route) : http://localhost:3000/ , if not work then https://localhost:3000/ 
 - BackEnd (Default Route) : http://localhost:8000/ , if not work then https://localhost:8000/
