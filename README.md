@@ -6,7 +6,7 @@ This repository showing visualization about earthquake in animation
 - mysql (latest)
 - nodejs (latest)
 - npm (latest)
-- composer
+- composer (latest)
 
 # Install Frontend
 1. Install nodejs and npm
@@ -30,12 +30,21 @@ DB_PASSWORD=secret
 ```
 change `DB_DATABASE=homestead` to 'DB_DATABASE=homestead' (don't forget to create earthquake database), then change `DB_USERNAME=homestead` to `DB_USERNAME="Your mysql username"`, the default mysql username is "root", then  `DB_PASSWORD=secret` to `DB_PASSWORD={your mysql password}`, the default value for me is "". Make it suitable with your environtment. 
 
-
 5. make database  named ```earthquake``` in mysql
 6. in backend-dashboardgempa folder type and enter ``` php artisan migrate ```. It will create epicentrums table in "earthquake" database
 7. in backend-dashboardgempa folder give command ``` php artisan db:seed ```. If anything error or computer deadlock happen
 you can manually add data with epicentrums.sql to import to sql manually to table epicentrums.
 8. To run backend just type and enter ``` php artisan serve ```
+
+# Default Endpoint
+
+- FrontEnd (Default Route) : http://localhost:3000/ , if not work then https://localhost:3000/ 
+- BackEnd (Default Route) : http://localhost:8000/ , if not work then https://localhost:8000/
+
+Check the FrontEnd for the visualization. Note: the backend and frontend must run together.
+
+# Troubleshooting
+1. If `php artisan migrate` not work. Maybe the config of .env is wrong or the file missing or maybe the database not follow the rule above. The mysql database should have `earthquake` database. Another possibilities that `epicentrums` table has exist ini `earthquake` database, please delete first and try again `php artisan migrate`. Please kindly check the error too if not listed in here
 
 
 
