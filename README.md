@@ -43,7 +43,7 @@ you can manually add data with epicentrums.sql to import to sql manually to tabl
 
 # Default Endpoint and View
 
-*Don't Forget to enable your internet, cause this dashboard use google maps*
+**Don't Forget to enable your internet, cause this dashboard use google maps**
 
 - FrontEnd (Default Route) : http://localhost:3000/ , if not work then https://localhost:3000/ 
 - BackEnd (Default Route) : http://localhost:8000/ , if not work then https://localhost:8000/
@@ -52,7 +52,7 @@ Check the FrontEnd for the visualization. Note: the backend and frontend must ru
 
 # Troubleshooting
 1. If `php artisan migrate` not work. Maybe the config of .env is wrong or the file missing or maybe the database not follow the rule above. The mysql database should have `earthquake` database. Another possibilities that `epicentrums` table has exist ini `earthquake` database, please delete first and try again `php artisan migrate`. Please kindly check the error too if not listed in here
-
+2. **Don't Forget to enable your internet, cause this dashboard use google maps**
 
 
 
