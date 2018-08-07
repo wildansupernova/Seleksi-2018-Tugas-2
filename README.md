@@ -8,6 +8,11 @@ This repository showing visualization about earthquake in animation
 - npm (latest)
 - composer (latest)
 
+#Technology
+- Using React
+- Using Laravel
+- Using MySQL
+
 # Install Frontend
 1. Install nodejs and npm
 2. in frontend-dashboardgempa give command
